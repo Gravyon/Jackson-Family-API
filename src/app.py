@@ -38,7 +38,7 @@ def handle_hello():
 
     return jsonify(response_body), 200
     
-
+# Create new member
 @app.route('/member', methods=['POST'])
 def new_member():
     member = json.loads(request.data)
@@ -49,7 +49,7 @@ def new_member():
     }
 
     return jsonify(response_body), 200
-
+# Delete single member
 @app.route('/member/<int:member_id>', methods=['DELETE'])
 def delete_member(member_id):
     # member = json.loads(request.data)
@@ -61,6 +61,7 @@ def delete_member(member_id):
 
     return jsonify(response_body), 200
 
+# Get single member
 @app.route('/member/<int:member_id>', methods=['GET'])
 def get_member(member_id):
     # this is how you can use the Family datastructure by calling its methods
