@@ -31,10 +31,9 @@ def handle_hello():
 
     # this is how you can use the Family datastructure by calling its methods
     members = jackson_family.get_all_members()
-    response_body = {
-        "hello": "world",
-        "family": members
-    }
+    response_body = [ { 
+        "family": members,
+    }]
 
     return jsonify(response_body), 200
     
@@ -56,7 +55,7 @@ def delete_member(member_id):
     # this is how you can use the Family datastructure by calling its methods
     members = jackson_family.delete_member(member_id)
     response_body = {
-        "member": "Member deleted"
+        "done": True
     }
 
     return jsonify(response_body), 200
